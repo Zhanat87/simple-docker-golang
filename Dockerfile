@@ -30,16 +30,16 @@ EXPOSE 8084
 # https://docs.docker.com/engine/getstarted/step_six/#step-1-tag-and-push-the-image
 # https://docs.docker.com/engine/reference/commandline/commit/#commit-a-container-with-new-cmd-and-expose-instructions
 # go build
-# docker build -t simple-docker-golang .
+# docker build -t zhanat87/simple-docker-golang .
 # docker images
-# docker run -d -p 8084:8084 simple-docker-golang
+# docker run -d -p 8084:8084 zhanat87/simple-docker-golang
 # curl http://localhost:8084
 # docker ps
 # docker stop <container_id>
-# docker stop $(docker ps -q --filter ancestor=simple-docker-golang)
+# docker stop $(docker ps -q --filter ancestor=zhanat87/simple-docker-golang)
 # docker images
 # docker tag <container_id> zhanat87/simple-docker-golang:latest
-# docker tag $(docker ps -q --filter ancestor=simple-docker-golang) zhanat87/simple-docker-golang:latest
+# docker tag $(docker ps -q --filter ancestor=zhanat87/simple-docker-golang) zhanat87/simple-docker-golang:latest
 # docker images
 # docker login
 # docker push zhanat87/simple-docker-golang
@@ -47,9 +47,9 @@ EXPOSE 8084
 # history | grep mv
 # history 5
 # history | grep ssh
-# docker commit $(docker ps -q --filter ancestor=simple-docker-golang) zhanat87/simple-docker-golang:latest
-# docker rmi $(docker ps -q --filter ancestor=simple-docker-golang)
-# docker rmi $(docker ps -q --filter ancestor=simple-docker-golang) -f
+# docker commit $(docker ps -q --filter ancestor=zhanat87/simple-docker-golang) zhanat87/simple-docker-golang:latest
+# docker rmi $(docker ps -q --filter ancestor=zhanat87/simple-docker-golang)
+# docker rmi $(docker ps -q --filter ancestor=zhanat87/simple-docker-golang) -f
 # docker pull zhanat87/simple-docker-golang:latest
 
 
