@@ -1,4 +1,5 @@
 /.idea
+simple-docker-golang
 /other
 /bin
 /pkg

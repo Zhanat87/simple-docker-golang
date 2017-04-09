@@ -1,0 +1,14 @@
+pipeline:
+  build:
+    image: zhanat87/simple-docker-golang
+    commands:
+      - go get
+      - go build
+      - go test
+
+services:
+  postgres:
+    image: postgres
+    environment:
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
