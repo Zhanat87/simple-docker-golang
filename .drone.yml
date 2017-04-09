@@ -2,9 +2,9 @@ pipeline:
   build:
     image: zhanat87/simple-docker-golang
     commands:
-      - go get
+#      - go get
       - go build
-      - go test
+#      - go test
 
 services:
   postgres:
