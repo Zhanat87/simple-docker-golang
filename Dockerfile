@@ -28,6 +28,7 @@ EXPOSE 8084
 # https://docs.docker.com/engine/getstarted/step_five/#step-2-verify-your-email-and-add-a-repository
 # https://docs.docker.com/engine/getstarted/step_four/#step-4-run-your-new-docker-whale
 # https://docs.docker.com/engine/getstarted/step_six/#step-1-tag-and-push-the-image
+# https://docs.docker.com/engine/reference/commandline/commit/#commit-a-container-with-new-cmd-and-expose-instructions
 # go build
 # docker build -t simple-docker-golang .
 # docker images
@@ -48,6 +49,9 @@ EXPOSE 8084
 # history | grep ssh
 # docker commit $(docker ps -q --filter ancestor=simple-docker-golang) zhanat87/simple-docker-golang:latest
 # docker rmi $(docker ps -q --filter ancestor=simple-docker-golang)
+# docker rmi $(docker ps -q --filter ancestor=simple-docker-golang) -f
+# docker pull zhanat87/simple-docker-golang:latest
+
 
 
 
