@@ -47,6 +47,7 @@ EXPOSE 8084
 # history 5
 # history | grep ssh
 # docker commit $(docker ps -q --filter ancestor=simple-docker-golang) zhanat87/simple-docker-golang:latest
+# docker rmi $(docker ps -q --filter ancestor=simple-docker-golang)
 
 
 
