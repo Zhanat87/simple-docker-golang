@@ -22,8 +22,8 @@ FROM golang:latest
 ADD simple-docker-golang /go/simple-docker-golang
 ENTRYPOINT /go/simple-docker-golang
 
-# Service listens on port 8999.
-EXPOSE 8080
+# Service listens on port 8084.
+EXPOSE 8084
 
 # https://docs.docker.com/engine/getstarted/step_five/#step-2-verify-your-email-and-add-a-repository
 # https://docs.docker.com/engine/getstarted/step_four/#step-4-run-your-new-docker-whale
@@ -31,16 +31,29 @@ EXPOSE 8080
 # go build
 # docker build -t simple-docker-golang .
 # docker images
-# docker run -d -p 8080:8080 simple-docker-golang
-# curl http://localhost:8080
+# docker run -d -p 8084:8084 simple-docker-golang
+# curl http://localhost:8084
 # docker ps
 # docker stop <container_id>
 # docker stop $(docker ps -q --filter ancestor=simple-docker-golang)
 # docker images
 # docker tag <container_id> zhanat87/simple-docker-golang:latest
+# docker tag $(docker ps -q --filter ancestor=simple-docker-golang) zhanat87/simple-docker-golang:latest
 # docker images
 # docker login
 # docker push zhanat87/simple-docker-golang
 # sh deploy.sh
+# history | grep mv
+# history 5
+# history | grep ssh
+# docker commit $(docker ps -q --filter ancestor=simple-docker-golang) zhanat87/simple-docker-golang:latest
+
+
+
+
+
+
+
+
 
 
