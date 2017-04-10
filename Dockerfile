@@ -13,14 +13,24 @@ FROM golang:latest
 # Get godeps for managing and restoring dependencies
 #RUN go get github.com/tools/godep
 # Restore godep dependencies
-# RUN godep restore
+#RUN godep restore
 # Build the stack-auth command inside the container.
 #RUN go install github.com/Zhanat87/go
 # Run the stack-auth command when the container starts.
 #ENTRYPOINT /go/bin/go
 
-ADD simple-docker-golang /go/simple-docker-golang
-ENTRYPOINT /go/simple-docker-golang
+#RUN apt-get update
+#RUN apt-get install -y vim
+# has no effect
+RUN export GOBIN=$GOPATH/bin
+#ADD simple-docker-golang /go/simple-docker-golang
+#WORKDIR /go - by default
+ADD server.go /go/server.go
+RUN go get github.com/dgrijalva/jwt-go
+#RUN go get
+RUN go build
+#ENTRYPOINT /go/simple-docker-golang
+ENTRYPOINT /go/go
 
 # Service listens on port 8084.
 EXPOSE 8084
@@ -51,9 +61,18 @@ EXPOSE 8084
 # docker rmi $(docker ps -q --filter ancestor=zhanat87/simple-docker-golang)
 # docker rmi $(docker ps -q --filter ancestor=zhanat87/simple-docker-golang) -f
 # docker pull zhanat87/simple-docker-golang:latest
+# docker inspect $(docker ps -q --filter ancestor=zhanat87/simple-docker-golang)
+# docker logs $(docker ps -q --filter ancestor=zhanat87/simple-docker-golang)
+# docker exec -it $(docker ps -q --filter ancestor=zhanat87/simple-docker-golang) /bin/bash
+# go env
+# docker rmi -f <container_id>
 
-
-
+# after build run:
+# docker run -d -p 8084:8084 zhanat87/simple-docker-golang
+# inside in /root/zhanat.site/docker
+# run drone inside in /root/zhanat.site/docker:
+# docker-compose up
+# file -> settings -> go libraries => project libraries -> add /home/zhanat/go/src
 
 
 
